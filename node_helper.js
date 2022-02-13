@@ -4,8 +4,8 @@ const cheerio = require('cheerio')
 
 module.exports = NodeHelper.create({
   socketNotificationReceived: function(notification, payload) {
-    if (notification === "MMM-eswordoftheday-GET_WORD") {
-      const url = "https://www.spanishdict.com/wordoftheday";
+    if (notification === "MMM-tgwordoftheday-GET_WORD") {
+      const url = "https://www.tagalog.com/word-of-the-day/";
 
       axios.get(url).then(({ data }) => {
         const $ = cheerio.load(data);
